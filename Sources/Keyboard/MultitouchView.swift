@@ -29,6 +29,10 @@ class MultitouchViewIOS: UIView {
         self.touches.subtract(touches)
         callback(self.touches.map { $0.location(in: nil)})
     }
+    
+    override public var editingInteractionConfiguration: UIEditingInteractionConfiguration {
+             return .none
+    }
 }
 
 struct MultitouchView: UIViewRepresentable {
